@@ -1,7 +1,7 @@
 ## Dependencies
- * libjpeg
- * mozjpeg
- *
+ * libjpeg-turbo (https://github.com/libjpeg-turbo/libjpeg-turbo)
+ * mozjpeg (https://github.com/mozilla/mozjpeg)
+ * libiqa (https://sourceforge.net/projects/iqa/)
 
 ## Install mozjpeg
 
@@ -24,6 +24,15 @@ gcc -shared -I./include -fPIC -lm -O2 -Wall -o libiqa.so ./source/ssim.c ./sourc
 cp libiqa.so /usr/lib/x86_64-linux-gnu/
 ```
 
-## Created based on
+## Build extension
+
+```
+git clone https://github.com/mprzytulski/php-jpeg-optimizer
+phpize
+./configure
+make
+```
+
+# Created based on
 
 https://github.com/danielgtaylor/jpeg-archive
