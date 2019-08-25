@@ -14,14 +14,16 @@ cmake -G"Unix Makefiles" -DCMAKE_INSTALL_PREFIX=/usr/
 make install
 ```
 
-## Install iqa
-
+## Build iqa as shared library
 
 ```
 wget https://master.dl.sourceforge.net/project/iqa/1.1.1%20Release/iqa_1.1.1_src.tar.gz
 tar -xf iqa_1.1.1_src.tar.gz
 cd ./iqa_1.1.1
-RELEASE=1 make
-cp ./include/* /usr/include
-cp ./build/release/* /usr/lib/x86_64-linux-gnu/
+gcc -shared -I./include -fPIC -lm -O2 -Wall -o libiqa.so ./source/ssim.c ./source/convolve.c ./source/decimate.c ./source/math_utils.c ./source/ms_ssim.c ./source/mse.c ./source/psnr.c
+cp libiqa.so /usr/lib/x86_64-linux-gnu/
 ```
+
+## Created based on
+
+https://github.com/danielgtaylor/jpeg-archive
