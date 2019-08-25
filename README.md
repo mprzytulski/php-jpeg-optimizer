@@ -33,6 +33,12 @@ phpize
 make
 ```
 
+## Usage
+
+```
+jpeg_optimize((string) source, (string)destination, [JPEG_OPTIMIZER_QUALITY_*], [JPEG_OPTIMIZER_METHOD_*], [(int) jpegMin], [(int) jpegMax], [(int) attempts])
+```
+
 # Created based on
 
 https://github.com/danielgtaylor/jpeg-archive
