@@ -1,0 +1,7 @@
+ARG_ENABLE('jpeg_optimizer', 'jpeg_optimizer support', 'no');
+
+if (PHP_JPEG_OPTIMIZER != 'no') {
+	AC_DEFINE('HAVE_JPEG_OPTIMIZER', 1, 'jpeg_optimizer support enabled');
+
+	EXTENSION('jpeg_optimizer', 'jpeg_optimizer.c', null, '/DZEND_ENABLE_STATIC_TSRMLS_CACHE=1');
+}
